@@ -1,11 +1,16 @@
 {
-  "name": "03-webpack-inicial",
-  "version": "1.0.0",
-  "description": "Este es un cascaron de un proyecto de webpack",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Hector Ccollatupa",
-  "license": "ISC"
+    "name": "03-webpack-inicial",
+    "version": "1.0.0",
+    "description": "Este es un cascaron de un proyecto de webpack",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack"
+    },
+    "author": "Hector Ccollatupa",
+    "license": "ISC",
+    "devDependencies": {
+        "webpack": "^5.35.1",
+        "webpack-cli": "^4.6.0"
+    }
 }
