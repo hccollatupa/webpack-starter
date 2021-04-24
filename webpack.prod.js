@@ -2,17 +2,27 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
     mode: 'production',
     optimization: {
-        minimizer: [new CssMinimizerPlugin()]
+        minimizer: [
+            new CssMinimizerPlugin()
+        ]
     },
     output: {
         filename: 'main.[contenthash].js'
     },
     module: {
         rules: [{
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: [
+                    'babel-loader'
+                ]
+            },
+            {
                 test: /\.css$/,
                 exclude: /styles\.css$/,
                 use: [
@@ -60,6 +70,7 @@ module.exports = {
             patterns: [
                 { from: 'src/assets', to: 'assets/' },
             ]
-        })
+        }),
+        new TerserPlugin(),
     ]
 }
