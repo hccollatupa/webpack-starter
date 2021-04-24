@@ -2,7 +2,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const TerserPlugin = require("terser-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     mode: 'production',
@@ -12,7 +12,8 @@ module.exports = {
         ]
     },
     output: {
-        filename: 'main.[contenthash].js'
+        filename: 'main.[contenthash].js',
+        clean: true,
     },
     module: {
         rules: [{
